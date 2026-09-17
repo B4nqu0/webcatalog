@@ -1,0 +1,23 @@
+# Системні файли
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Налаштування редакторів
+.vscode/
+.idea/
+*.swp
+
+# Залежності та збірка (знадобиться з блоку 10)
+node_modules/
+dist/
+build/
+
+# Змінні оточення
+.env
+.env.local
+
+# Тимчасові файли
+*.log
+*.tmp
+*~
