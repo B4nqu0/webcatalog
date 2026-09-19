@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Додати дистрибутив — Каталог Linux-дистрибутивів</title>
+    <meta name="description" content="Форма для додавання Linux-дистрибутива до каталогу">
+</head>
+<body>
+
+<header>
+    <h2>WebCatalog</h2>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Каталог</a></li>
+            <li><a href="item.html">Сторінка дистрибутива</a></li>
+            <li><a href="add.html">Додати дистрибутив</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h1>Додати Linux-дистрибутив</h1>
+
+    <section>
+        <h2>Форма нового запису</h2>
+
+        <form action="/add" method="post">
+
+            <p>
+                <label for="name">Назва дистрибутива:</label><br>
+                <input type="text" id="name" name="name" maxlength="50" required>
+            </p>
+
+            <p>
+                <label for="family">Сімейство:</label><br>
+                <select id="family" name="family" required>
+                    <option value="">Оберіть сімейство</option>
+                    <option value="Debian">Debian</option>
+                    <option value="Ubuntu">Ubuntu</option>
+                    <option value="Red Hat">Red Hat</option>
+                    <option value="Arch">Arch</option>
+                    <option value="Nix">Nix</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="package_manager">Пакетний менеджер:</label><br>
+                <input type="text" id="package_manager" name="package_manager" maxlength="30" required>
+            </p>
+
+            <p>
+                <label for="release_year">Рік першого випуску:</label><br>
+                <input type="number" id="release_year" name="release_year" min="1991" max="2100" required >
+            </p>
+
+            <p>
+                <label for="release_date">Дата першого випуску:</label><br>
+                <input type="date" id="release_date" name="release_date">
+            </p>
+
+            <p>
+                <label for="website">Офіційний сайт:</label><br>
+                <input type="url" id="website" name="website" maxlength="200">
+            </p>
+
+            <p>
+                <label for="phone">Контактний телефон:</label><br>
+                <input type="tel" id="phone" name="phone" maxlength="20">
+            </p>
+
+            <fieldset>
+                <legend>Тип релізу:</legend>
+
+                <p>
+                    <input type="radio" id="stable" name="stability" value="Stable" required>
+                    <label for="stable">Stable</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="rolling" name="stability" value="Rolling Release">
+                    <label for="rolling">Rolling Release</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <label for="desktop">Робоче середовище:</label><br>
+                <input type="text" id="desktop" name="desktop" maxlength="50" required>
+            </p>
+
+            <p>
+                <input type="checkbox" id="opensource" name="opensource" value="yes">
+                <label for="opensource">Дистрибутив має відкритий код</label>
+            </p>
+
+            <p>
+                <label for="description">Опис дистрибутива:</label><br>
+                <textarea id="description" name="description" rows="6" cols="50" maxlength="500" required></textarea>
+            </p>
+
+            <p>
+                <button type="submit">Додати дистрибутив</button>
+            </p>
+
+        </form>
+    </section>
+
+</main>
+
+</body>
+</html>
