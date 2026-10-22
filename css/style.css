@@ -24,6 +24,19 @@
     --shadow-hover: 0 8px 20px rgb(36 36 58 / 16%);
 }
 
+/* Темна тема */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --c-text: #f1f0f7;
+        --c-muted: #b7b4c9;
+        --c-accent: #b5a4ff;
+        --c-accent-dark: #9b83ff;
+        --c-bg: #171621;
+        --c-surface: #242332;
+        --c-border: #454258;
+    }
+}
+
 /* ============ 2. Скидання ============ */
 *,
 *::before, /*Псевдоелементи які додавються перед вмістом елемента*/
@@ -66,11 +79,11 @@ h1 {
 
 /* Заголовки другого та третього рівнів */
 h2 {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
 }
 
 /* Абзаци та списки */
@@ -117,6 +130,8 @@ button:focus-visible {
     outline: 2px solid var(--c-accent);
     outline-offset: 3px;
 }
+
+
 
 /* Виділення обов'язкових полів із некоректними даними */
 input:required:invalid,
