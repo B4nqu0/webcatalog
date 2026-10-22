@@ -37,6 +37,11 @@ body {
     padding: 0;
 }
 
+main {
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
 /* ============ 3. Базові елементи ============ */
 /* Основний текст і фон сторінки */
 body {
@@ -113,14 +118,12 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/*==============================*/
-/* ??? Виділення обов'язкових полів із некоректними даними */
+/* Виділення обов'язкових полів із некоректними даними */
 input:required:invalid,
 select:required:invalid,
 textarea:required:invalid {
     border-color: var(--c-accent-dark);
 }
-/*==============================*/
 
 /* Таблиця */
 table {
@@ -147,5 +150,118 @@ thead {
 }
 
 /* ============ 4. Компоненти ============ */
+/* Картка дистрибутива */
+article {
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s;
+}
+
+/* Ефект при наведенні на картку */
+article:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Шапка сайту */
+header {
+    background-color: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    padding: var(--space-md);
+}
+
+/* Заголовок у шапці */
+header h2 {
+    margin-top: 0;
+}
+
+/* Список навігації */
+nav ul {
+    display: flex; /*Розмістить пункти меню в один ряд а не один під одним*/
+    flex-wrap: wrap; /*Дозволить пунктам переноситися на наступний рядок*/
+    gap: var(--space-md); /*Відстань між пунктами меню*/
+    list-style: none; /*Прибирає маркери списку*/
+    padding: 0; /*Прибирає внутрішні відступи списку*/
+    margin: 0; /*Прибирає зовнішні відступи списку*/
+}
+
+/* Оформлені посилання */
+nav a {
+    text-decoration: none; /*Прибирає підкреслення*/
+    font-weight: bold; /*fat fatty  fat*/
+    transition: color 0.2s; /*Плавна зміна кольору*/
+}
+
+/* Помітний активний стан */
+nav a:hover, /*Посилання змінить колір коли наводиться курсор*/
+nav a:active { /*Посилання змінює колір поки натискаєш на нього*/
+    color: var(--c-accent-dark);
+}
+
+/* Кнопка форми */
+button {
+    background-color: var(--c-accent);
+    color: var(--c-surface);
+    border: none;
+    border-radius: var(--radius-card);
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer; /*Курсор у вигляді руки при наведенні*/
+    transition: background-color 0.2s;
+}
+
+/* Наведення на кнопку */
+button:hover { /*змінює фон при наведенні*/
+    background-color: var(--c-accent-dark);
+}
+
+/* Фокус кнопки з клавіатури */
+button:focus-visible { /*показує рамку коли кнопку вибрано клавіатурою*/
+    outline: 2px solid var(--c-accent-dark);
+    outline-offset: 3px;
+}
+
+/* Неактивна кнопка */
+button:disabled { /*робить неактивну кнопку бліднішою та змінює курсор*/
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Теги дистрибутива */
+article ul {
+    display: flex; /*Розміщує теги в ряд*/
+    flex-wrap: wrap; /*Дозволяє тегам переходити на новий рядок*/
+    gap: var(--space-sm); /*Відстань між тегами*/
+    padding: 0; /*прибирає внутрішній відступ списку*/
+    list-style: none; /*прибирає маркери списку*/
+}
+
+/* Оформлення окремого тегу */
+article ul li {
+    background-color: var(--c-bg);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-pill);
+    padding: var(--space-xs) var(--space-sm);
+}
+
+/* Підвал сайту */
+footer {
+    background-color: var(--c-surface);
+    border-top: 1px solid var(--c-border);
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+    text-align: center; /*вирівнює текст по центру*/
+}
+
+/* Абзаци в підвалі */
+footer p {
+    margin-bottom: var(--space-xs);
+}
 
 /* ============ 5. Допоміжні класи ============ */
+
+/* Приглушений текст */
+.text-muted {
+    color: var(--c-muted);
+}
