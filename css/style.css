@@ -25,8 +25,126 @@
 }
 
 /* ============ 2. Скидання ============ */
+*,
+*::before, /*Псевдоелементи які додавються перед вмістом елемента*/
+*::after { /*псевдоелементи які додавються після вмісту елемента*/
+    box-sizing: border-box;
+}
+
+body {
+    /*margin зовнішній відступ елемента padding внутрішній відступ елемента*/
+    margin: 0;
+    padding: 0;
+}
 
 /* ============ 3. Базові елементи ============ */
+/* Основний текст і фон сторінки */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--c-text);
+    background-color: var(--c-bg);
+}
+
+/* Заголовки сторінки */
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+/* Головний заголовок адаптується до розміру екрана */
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem); /*Робить h1 адаптивним але не стає меншим за 2rem і більшим за 3rem*/
+}
+
+/* Заголовки другого та третього рівнів */
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Абзаци та списки */
+p,
+ul,
+ol,
+dl {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+/* Посилання */
+a {
+    color: var(--c-accent);
+    transition: color 0.2s;
+}
+
+a:hover { /*Змінює колір посилання коли наводять мишку*/
+    color: var(--c-accent-dark);
+}
+
+a:focus-visible { /*Показує видиму рамку коли вибране клавіатурою*/
+    outline: 2px solid var(--c-accent);
+    outline-offset: 3px;
+}
+
+/* Поля введення та список вибору */
+input,
+select,
+textarea {
+    padding: var(--space-sm);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-card);
+    font: inherit; /*Використовуємо той самий шрифт*/
+    color: var(--c-text);
+    background-color: var(--c-surface);
+}
+
+/* Помітний стан фокуса */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 3px;
+}
+
+/*==============================*/
+/* ??? Виділення обов'язкових полів із некоректними даними */
+input:required:invalid,
+select:required:invalid,
+textarea:required:invalid {
+    border-color: var(--c-accent-dark);
+}
+/*==============================*/
+
+/* Таблиця */
+table {
+    border-collapse: collapse; /*Обєднує сусідні межі таблиці щоб вони не виглядали подвійними*/
+}
+
+/* Межі таблиці та її комірок */
+table,
+th,
+td {
+    border: 1px solid var(--c-border);
+}
+
+/* Відступи всередині комірок */
+th,
+td {
+    padding: var(--space-sm);
+}
+
+/* Виділення рядка заголовків */
+thead {
+    background-color: var(--c-accent);
+    color: var(--c-surface);
+}
 
 /* ============ 4. Компоненти ============ */
 
