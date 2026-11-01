@@ -30,6 +30,18 @@
     <section class="cards">
         <h2>Список дистрибутивів</h2>
 
+        <!--Панель фільтрів або дій (.toolbar) для лаб 4 завдання 2.3-->
+        <div class="toolbar">
+            <label for="search">Пошук:</label> <!--підписує поле-->
+            <input type="search" id="search" placeholder="Назва дистрибутива"> <!--поле пошуку-->
+            <label for="sort">Сортування:</label>
+            <select id="sort"> <!--список вибору сортування-->
+                <option value="name">За назвою</option> <!--опції-->
+                <option value="year">За роком випуску</option>
+            </select>
+            <button type="reset">Скинути</button> <!--кнопка-->
+        </div>
+
         <article><!--Самостійний запис-->
             <h3>Ubuntu</h3>
             <img src="img/placeholder.svg" alt="Логотип Ubuntu" width="200">
