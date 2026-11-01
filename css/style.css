@@ -315,6 +315,16 @@ button:hover { /*змінює фон при наведенні*/
     background-color: var(--c-accent-dark);
 }
 
+/* Стан кнопки під час натискання */
+button:active {
+    background-color: var(--c-accent-dark);
+}
+
+/* Стан посилання під час натискання */
+a:active {
+    color: var(--c-accent-dark);
+}
+
 /* Фокус кнопки з клавіатури */
 button:focus-visible { /*показує рамку коли кнопку вибрано клавіатурою*/
     outline: 2px solid var(--c-accent-dark);
