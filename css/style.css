@@ -210,9 +210,9 @@ header h2 {
 }
 
 /* Розміщення карток у ряд */
-.cards { /*секція flex-контейнеру*/
-    display: flex;
-    flex-wrap: wrap; /*переносить картки на наступний рядок*/
+.cards { /*секція grid*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: var(--space-md); /*відстань між картками*/
 }
 
@@ -241,6 +241,18 @@ header h2 {
     flex: 1 1 100%; /*кожна картка займає окремий рядок*/
     align-items: center; /*вирівнює вміст по вертикалі*/
     flex-wrap: wrap; /*дозволяє вмісту переноситися*/
+}
+
+/* Оформлення виділеної картки */
+.featured {
+    border: 2px solid var(--c-accent); /*додає картці акцентну межу*/
+    grid-column: span 2; /*розтягнення картки на дві колонки*/
+}
+
+@media (max-width: 48rem) {
+    .featured {
+        grid-column: auto; /*на вузьких екранах повертає звичайне розташування (картка не ламаиме сітку)*/
+    }
 }
 
 /* Панель дій */
@@ -393,5 +405,42 @@ footer p {
     *::before,
     *::after {
         transition: none; /*вимикає плавні переходи*/
+    }
+}
+
+.page-layout { /*для <main>*/
+    display: grid; /*робимо елемент Grid-контейнером*/
+    grid-template-columns: 1fr; /*створення колонки шириною на весь доступний простір*/ 
+    grid-template-areas: /*створення іменових областей сітки*/
+        "title"
+        "toolbar"
+        "catalog"
+        "help";
+    gap: var(--space-md); /*відстань між елементами сітки*/
+}
+
+.page-layout h1 {
+    grid-area: title; /*робить заголовок h1 всередині .page-layout і розміщуємо в області title*/
+}
+
+.page-layout .toolbar {
+    grid-area: toolbar; /*панель пошуку та сортування розміщує в області toolbar*/
+}
+
+.page-layout .cards {
+    grid-area: catalog; /*секцію з картками дистрибутивів розміщуємо в області catalog*/
+}
+
+.page-layout aside {
+    grid-area: help; /*блок довідки розміщуємо в області help*/
+}
+
+@media (min-width: 48rem) { /*застосовувати правила якщо ширина екрана становить щонайменше 48rem*/
+    .page-layout { /*повторне вибирання сітки щоб змінити її розташування на широкому екрані*/
+        grid-template-columns: 220px minmax(0, 1fr);
+        grid-template-areas:
+            "title title"
+            "toolbar catalog"
+            "help catalog";
     }
 }
