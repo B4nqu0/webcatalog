@@ -54,8 +54,10 @@ body {
 }
 
 main {
-    max-width: 70rem;
+    width: 100%;
+    max-width: 90rem;
     margin: 0 auto;
+    padding: 0 1rem;
     flex: 1; /*відсуває наступні елементи донизу*/
 }
 
@@ -135,8 +137,6 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-
-
 /* Виділення обов'язкових полів із некоректними даними */
 input:required:invalid,
 select:required:invalid,
@@ -212,13 +212,13 @@ header h2 {
 /* Розміщення карток у ряд */
 .cards { /*секція grid*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     gap: var(--space-md); /*відстань між картками*/
 }
 
 /* Заголовок секції займає весь рядок */
 .cards h2 {
-        grid-column: 1 / -1;/*залишає заголовок на окремому рядку*/
+        grid-column: 1 / -1; /*залишає заголовок на окремому рядку*/
 }
 
 /* Розмір і висота карток */
@@ -392,6 +392,7 @@ footer {
 /* Абзаци в підвалі */
 footer p {
     margin-bottom: var(--space-xs);
+    max-width: 649px; 
 }
 
 /* ============ 5. Допоміжні класи ============ */
