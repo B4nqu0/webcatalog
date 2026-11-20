@@ -10,9 +10,11 @@ import {
   findById,
   applyFilters,
   getStats,
-  filterByStability
+  filterByStability,
+  // Завдання підвищеної складності
+  sortByMultiple,
+  validateItem
 } from "./catalog.js";
-
 
 console.log("Усі дистрибутиви:", items);
 
@@ -39,3 +41,10 @@ console.log("Комбіновані фільтри:", applyFilters(items, {
 console.log("Статистика:", getStats(items));
 
 console.log("Фільтр за стабільністю:", filterByStability(items, "LTS"));
+
+// Завдання підвищеної складності
+console.log("Сортування за кількома полями:", sortByMultiple(items));
+
+items.forEach(item => {
+  console.log(item.name, validateItem(item));
+});

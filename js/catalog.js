@@ -115,3 +115,42 @@ export function filterByStability(list, stability) {
 
   return list.filter(item => item.stability.includes(stability));
 }
+
+// Завдання підвищеної складності
+export function sortByMultiple(list) {
+  const result = [...list];
+
+  result.sort((a, b) => {
+    if (a.family < b.family) return -1;
+    if (a.family > b.family) return 1;
+
+    return a.release_year - b.release_year;
+  });
+
+  return result;
+}
+
+export function validateItem(item) {
+  const requiredFields = [
+    "name",
+    "family",
+    "package_manager",
+    "release_year",
+    "desktop",
+    "stability"
+  ];
+
+  const problems = [];
+
+  requiredFields.forEach(field => {
+    if (item[field] === undefined) {
+      problems.push("Відсутнє поле: " + field);
+    } else {
+      if (item[field] === "") {
+        problems.push("Відсутнє поле: " + field);
+      }
+    }
+  });
+
+  return problems;
+}
