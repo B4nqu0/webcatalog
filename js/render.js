@@ -66,3 +66,21 @@ export function renderCards(list, container) {
     container.append(card);
   });
 }
+
+export function renderEmpty(container, message) {
+  container.replaceChildren();
+
+  const text = document.createElement("p");
+  text.textContent = message;
+
+  container.append(text);
+}
+
+export function renderEmpty(container, message) {
+  container.replaceChildren();
+
+  const text = document.createElement("p");
+  text.textContent = message;
+
+  container.append(text);
+}
