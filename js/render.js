@@ -84,3 +84,18 @@ export function renderEmpty(container, message) {
 
   container.append(text);
 }
+
+export function renderError(container, message, onRetry) {
+  container.replaceChildren();
+
+  const text = document.createElement("p");
+  text.textContent = message;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = "Спробувати ще раз";
+
+  button.addEventListener("click", onRetry);
+
+  container.append(text, button);
+}
