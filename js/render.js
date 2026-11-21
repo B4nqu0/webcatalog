@@ -1,4 +1,3 @@
-
 export function createCard(item) {
   const article = document.createElement("article");
   article.dataset.id = item.name;
@@ -57,4 +56,13 @@ export function createCard(item) {
   article.append(title, details, list, favoriteButton, linkContainer);
 
   return article;
+}
+
+export function renderCards(list, container) {
+  container.replaceChildren();
+
+  list.forEach(item => {
+    const card = createCard(item);
+    container.append(card);
+  });
 }
